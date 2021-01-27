@@ -15,7 +15,7 @@
 		data() {
 			return {
 				footBarList: tabBar,
-				current: 0
+				current: 3
 			}
 		},
 		onLoad() {

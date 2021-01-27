@@ -5,6 +5,30 @@
 			"style": {
 				"navigationBarTitleText": "blackCat"
 			}
+		},
+		{
+			"path": "pages/health/weightBP",
+			"style": {
+				"navigationBarTitleText": "blackCat"
+			}
+		},
+		{
+			"path": "pages/health/addWeightBP",
+			"style": {
+				"navigationBarTitleText": "新增心率体重"
+			}
+		},
+		{
+			"path": "pages/recipe/recipe",
+			"style": {
+				"navigationBarTitleText": "blackCat"
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "blackCat"
+			}
 		}
 	],
 	"globalStyle": {
@@ -12,6 +36,24 @@
 		"navigationBarTitleText": "blackCat",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color":"black",
+		"selectedColor":"black",
+		"backgroundColor":"white",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text":"首页"
+		}, {
+				"pagePath": "pages/health/weightBP",
+				"text":"心率体重"
+		}, {
+				"pagePath": "pages/recipe/recipe",
+				"text":"食谱"
+		}, {
+				"pagePath": "pages/my/my",
+				"text":"我的"
+		}]
 	},
 	"easycom": {
 		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"

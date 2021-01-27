@@ -2,7 +2,7 @@
 	<view>
 		<view class="u-page">
 			<!-- 所有内容的容器 -->
-			首页
+			食谱
 		</view>
 		<!-- 与包裹页面所有内容的元素u-page同级，且在它的下方 -->
 		<u-tabbar v-model="current" :list="footBarList" :mid-button="false"></u-tabbar>
@@ -15,7 +15,7 @@
 		data() {
 			return {
 				footBarList: tabBar,
-				current: 0
+				current: 2
 			}
 		},
 		onLoad() {
