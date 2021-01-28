@@ -32,9 +32,9 @@
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "blackCat",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#1890ff",
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {

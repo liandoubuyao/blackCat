@@ -3,12 +3,12 @@
     <view class="weight-BP">
       <!-- 所有内容的容器 -->
       <view class="addbtn">
-        <u-button type="primary">记录一下心率体重吧~</u-button>
+        <u-button type="primary" :plain="true" :ripple="true">记录一下心率体重吧~</u-button>
       </view>
       <!-- u-charts -->
       <view class="qiun-columns">
         <view class="qiun-bg-white qiun-title-bar qiun-common-mt" >
-          <view class="qiun-title-dot-light">基本折线图</view>
+          <view class="qiun-title-dot-light">最近一周记录</view>
         </view>
         <view class="qiun-charts" >
           <canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" @touchstart="touchLineA"></canvas>
@@ -123,4 +123,11 @@
 		height: 500upx;
 		background-color: #FFFFFF;
 	}
+  .qiun-title-dot-light{
+    font-size: 0.8rem;
+    text-indent: 0.5rem;
+  }
+  .qiun-columns{
+    padding-top: 0.5rem;
+  }
 </style>
