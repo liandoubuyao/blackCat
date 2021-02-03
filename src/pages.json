@@ -29,6 +29,12 @@
 			"style": {
 				"navigationBarTitleText": "blackCat"
 			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "blackCat"
+			}
 		}
 	],
 	"globalStyle": {

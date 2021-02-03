@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="u-page">
+		<view class="u-page" @click="reLaunch('/pages/login/login')">
 			<!-- 所有内容的容器 -->
 			首页
 		</view>
@@ -18,11 +18,20 @@
 				current: 0
 			}
 		},
-		onLoad() {
+		onLoad:function(option) {
+			console.log(uni)
+			if(!window.localStorage.getItem('userInfo')){
+				//页面跳转
+				this.reLaunch('/pages/login/login')
+			}
 
 		},
 		methods: {
-
+			reLaunch(path){
+				uni.reLaunch({
+						url: path
+				});		
+			}
 		}
 	}
 </script>
