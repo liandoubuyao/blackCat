@@ -21,6 +21,7 @@
 </template>
 
 <script>
+	import {postFormAPI} from '../../api/api'
   import { tabBar } from '../../../common/common'
   import uCharts from '../../components/u-charts.js';
   var _self;
@@ -28,6 +29,7 @@
   export default {
     data() {
       return {
+        userInfo:null,
         footBarList: tabBar,
         current: 1,
         chartData: {
@@ -47,6 +49,8 @@
       }
     },
     onLoad() {
+      this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      this.getWeightList()
       _self = this;
       this.cWidth=uni.upx2px(750);
       this.cHeight=uni.upx2px(500);
@@ -104,6 +108,13 @@
         uni.navigateTo({
           url: path
         });
+      },
+      getWeightList(){
+        let params = {};
+				params.userId = this.userInfo.id;
+        postFormAPI("/api/healthInformation/list",params).then(res=>{
+          console.log(res)
+        })
       }
     }
   }

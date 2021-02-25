@@ -84,9 +84,7 @@
 							type: 'success'
 						})
 						setTimeout(()=>{
-							// uni.redirectTo({
-							// 		url: '/pages/index/index'
-							// });
+							uni.navigateBack()
 						},2000)
 					}else{
 						this.$refs.uToast.show({
