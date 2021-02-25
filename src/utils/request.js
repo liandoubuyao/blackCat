@@ -1,6 +1,5 @@
 import axios from "axios";
 // import get_loc from "../local/local";
-import { Notify } from "vant";
 
 //创建新的axios实例
 const service = axios.create({
@@ -85,22 +84,10 @@ service.interceptors.response.use(
       // }
     } else {
       // 超时处理
-      if (JSON.stringify(error).includes("timeout")) {
-        Notify({
-          type: "warning",
-          message: "服务器响应超时，请刷新当前页"
-        });
-      }
-      Notify({
-        type: "warning",
-        message: error.message
-      })
+
       error.message("连接服务器失败");
     }
-    Notify({
-      type: "warning",
-      message: error.message
-    });
+
     return Promise.resolve(error.response);
   }
 );

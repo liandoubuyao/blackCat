@@ -8,14 +8,14 @@ import qs from "qs";
  */
 
 // let request = "http://192.168.1.105:18101"; //开发环境
-let request = "http://192.168.0.111:8888"; //开发环境
+let request = "http://127.0.0.1:8000"; //开发环境
 //let request = "http://172.16.0.80:18101";  //现场主环境
 //let request = "http://192.168.4.100:18101";  //现场主环境
 // let request = ""; //根据baseurl 自动设置
 // let request = get_loc('yb_url');  //需要环境支持
 //get请求
 
-export function getLIstAPI(url, params) {
+export function getListAPI(url, params) {
   return http.get(`${request}` + url, params);
 }
 

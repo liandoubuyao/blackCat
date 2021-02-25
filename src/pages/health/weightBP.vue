@@ -3,7 +3,7 @@
     <view class="weight-BP">
       <!-- 所有内容的容器 -->
       <view class="addbtn">
-        <u-button type="primary" :plain="true" :ripple="true">记录一下心率体重吧~</u-button>
+        <u-button @click="linkTo('/pages/health/addWeightBP')" type="primary" :plain="true" :ripple="true">记录一下心率体重吧~</u-button>
       </view>
       <!-- u-charts -->
       <view class="qiun-columns">
@@ -99,7 +99,12 @@
 						return category + ' ' + item.name + ':' + item.data 
 					}
 				});
-			}
+			},
+      linkTo(path){
+        uni.navigateTo({
+          url: path
+        });
+      }
     }
   }
 </script>
