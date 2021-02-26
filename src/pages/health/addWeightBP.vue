@@ -51,6 +51,7 @@
 			}
 		},
 		onLoad() {
+			// this.$isLogin()
 			this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
 		},
 		computed:{
