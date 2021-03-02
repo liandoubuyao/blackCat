@@ -8,7 +8,9 @@ import qs from "qs";
  */
 
 // let request = "http://192.168.1.105:18101"; //开发环境
-let request = "http://10.0.110.191:8000"; //开发环境
+// let request = "http://10.0.110.191:8000"; //开发环境
+let request = "http://121.196.171.94:8000"; //生产环境
+// let request = "http://127.0.0.1:8000"; //本地环境
 //let request = "http://172.16.0.80:18101";  //现场主环境
 //let request = "http://192.168.4.100:18101";  //现场主环境
 // let request = ""; //根据baseurl 自动设置
