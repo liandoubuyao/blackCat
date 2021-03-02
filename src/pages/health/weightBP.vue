@@ -83,7 +83,7 @@
             gridType:'dash',
             itemCount:4,//x轴单屏显示数据的数量，默认为5个
             scrollShow:true,//新增是否显示滚动条，默认false
-            scrollAlign:'left',//滚动条初始位置
+            scrollAlign:'right',//滚动条初始位置
             scrollBackgroundColor:'#F7F7FF',//默认为 #EFEBEF
             scrollColor:'#DEE7F7',//默认为 #A6A6A6
           },
@@ -137,7 +137,7 @@
 				params.userId = this.userInfo.id;
         postFormAPI("/api/healthInformation/list",params).then(res=>{
           console.log(res)
-          let data = res.data.data;
+          let data = res.data.data.reverse();
           let dataY = [],dataX = [];
           for(let i = 0; i < data.length; i++){
             dataX.push(data[i].create_time.split(" ")[0]);

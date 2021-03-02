@@ -46,13 +46,16 @@
 					[{value:"0",label:"0"},{value:"1",label:"1"},{value:"2",label:"2"},{value:"3",label:"3"},{value:"4",label:"4"},{value:"5",label:"5"},{value:"6",label:"6"},{value:"7",label:"7"},{value:"8",label:"8"},{value:"9",label:"9"},],
 					[{value:"0",label:"0"},{value:"1",label:"1"},{value:"2",label:"2"},{value:"3",label:"3"},{value:"4",label:"4"},{value:"5",label:"5"},{value:"6",label:"6"},{value:"7",label:"7"},{value:"8",label:"8"},{value:"9",label:"9"},],
 				],
-				weightArr:[1,8,8,1],
+				weightArr:['','','',''],
 				userInfo:null,
 			}
 		},
 		onLoad() {
 			// this.$isLogin()
 			this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
+		},
+		onShow(){
+			this.getWeightList()
 		},
 		computed:{
 			weight:function(){
@@ -70,6 +73,7 @@
 				this.weightArr = newWeight;
 			},
 			openWeightSelect(){
+				console.log(this.weightArr)
 				this.showWeightSelect = true;
 			},
 			submit(){
@@ -99,7 +103,25 @@
 						type: 'error'
 					})
 				})
-			}
+			},
+			getWeightList(){
+        let params = {};
+				params.userId = this.userInfo.id;
+        postFormAPI("/api/healthInformation/list",params).then(res=>{
+					if(res.data.data.length>0){
+						let lastWeight = res.data.data[0].weight;
+						lastWeight = lastWeight.toString().replace(".","");
+						let arr = [0,0,0,0];
+						for(let i = 0; i < lastWeight.length; i++){
+							if(parseInt(lastWeight[i])>-1){
+								arr[i] = parseInt(lastWeight[i]);
+							}
+						}
+						this.weightArr = arr;
+					}
+					
+        })
+      }
 		}
 	}
 </script>
